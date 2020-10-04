@@ -28,7 +28,7 @@
 
     <script src="/socket.io/socket.io.js"></script>
 
-    <link rel="stylesheet" href="/style2.css">
+    <link rel="stylesheet" href="/style.css">
 
     <script src="/script.js" defer></script>
 
@@ -60,67 +60,61 @@
                     <button onclick="playStop()"><i class="fas fa-video"></i></button>
                 </div>
 
+                <div class="main__video_button" style="display: inline-block;">
+                    <a href="/"><button class="btn-sec"><i class="fa fa-sign-out" aria-hidden="true"></i></button></a>
+                </div>
+
                 <div class="main__mute_button" style="display: inline-block;">
                     <button onclick="muteUnmute()"><i class="fas fa-microphone"></i></button>
                 </div>
 
-                <!-- <div style="display: inline-block;">
-                    <button onclick="getURL();" data-toggle="modal" data-target="#exampleModalCenter"><i
-                            class="fa fa-user-plus" aria-hidden="true"></i></button>
-                </div> -->
-
-            </div>
-        </div>
-
-        <!-- Modal -->
-        <!-- <div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog"
-            aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
-            <div class="modal-dialog modal-dialog-centered" role="document">
-                <div class="modal-content">
-                    <div class="modal-header">
-                        <h5 class="modal-title" id="exampleModalLongTitle">Invite Participants</h5>
-                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                            <span aria-hidden="true">&times;</span>
-                        </button>
-                    </div>
-                    <div class="modal-body">
-                        Meeting URL
-                        <div>
-                            <input type="text" id="meeting-url">
-                        </div> -->
-        <!-- The button used to copy the text -->
-        <!-- <button onclick="myFunction()">Copy text</button> -->
-        <!-- </div>
-                    <div class="modal-footer">
-                        <button onclick="copyMeetId();" type="button" class="btn btn-primary">Copy</button>
-                    </div>
+                <div style="display: inline-block;">
+                    <button onclick="openInvitePanel();"><i class="fa fa-user-plus" aria-hidden="true"></i></button>
                 </div>
+
             </div>
-        </div> -->
+        </div>
+
+
     </div>
 
 
+    <!-- <div class="messages"> -->
+    <div id="mySidepanel" class="sidepanel">
+        <div class="main__header">
+            <h3>Chat</h3>
+        </div>
+        <div class="main__chat_window">
+            <ul class="messages">
+
+            </ul>
+
+        </div>
+        <div id="main__message_container" class="main__message_container">
+            <input id="chat_message" type="text" placeholder="Send a message to everyone">
+        </div>
+    </div>
+    <!-- </div> -->
 
 
-    <div class="messages">
-        <div id="mySidepanel" class="sidepanel">
-            <div class="main__header">
-                <h3>Chat</h3>
+
+
+    <!-- Modal content -->
+    <div class="invite_panel" id="invite_panel">
+        <div class="invite_panel_content">
+            <div class="invite_panel_header">
+                <span class="close_invite_panel" onclick="closeInvitePanel();">&times;</span>
+                <h2>Invite Participants</h2>
             </div>
-            <div class="main__chat_window">
-                <ul class="messages">
-
-                </ul>
-
+            <div class="invite_panel_body">
+                <p>Meeting URL</p>
+                <input id="meeting-url" />
             </div>
-            <div class="main__message_container">
-                <input id="chat_message" type="text" placeholder="Type message here...">
+            <div class="invite_panel_footer">
+                <button onclick="copyMeetId();">Copy URL</button>
             </div>
         </div>
     </div>
-
-
-
 
 
 

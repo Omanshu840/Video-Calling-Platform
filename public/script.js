@@ -41,7 +41,7 @@ navigator.mediaDevices.getUserMedia({
         }
     });
     socket.on("createMessage", message => {
-        $("ul").append(`<li class="message"><b>user</b><br/>${message}</li>`);
+        $("ul").append(`<li class="message">${message}</li>`);
         scrollToBottom()
     })
 })
@@ -141,32 +141,50 @@ var isMessageOpen = false;
 function toggleNav() {
     if (isMessageOpen == false) {
         document.getElementById("mySidepanel").style.width = "25vw";
+        // document.getElementById("main__message_container").style.width = "25vw";
         document.getElementById("main-window").style.width = "75vw";
         isMessageOpen = true;
     }
     else {
         document.getElementById("mySidepanel").style.width = "0";
+        // document.getElementById("main__message_container").style.width = "0vw";
         document.getElementById("main-window").style.width = "100vw";
         isMessageOpen = false;
     }
 }
 
-// function getURL() {
-//     var meetUrl = document.getElementById("meeting-url");
-//     meetUrl.value = window.location.href;
-// }
+function openInvitePanel() {
 
-// function copyMeetId() {
-//     /* Get the text field */
-//     var copyText = document.getElementById("meeting-url");
+    invite_panel = document.getElementById("invite_panel");
+    invite_panel.style.display = "block";
 
-//     /* Select the text field */
-//     copyText.select();
-//     copyText.setSelectionRange(0, 99999); /*For mobile devices*/
+    var meetUrl = document.getElementById("meeting-url");
+    meetUrl.value = window.location.href;
+}
 
-//     /* Copy the text inside the text field */
-//     // document.execCommand("copy");
+function closeInvitePanel() {
+    invite_panel = document.getElementById("invite_panel");
+    invite_panel.style.display = "none";
+}
 
-//     /* Alert the copied text */
-//     // alert("Copied the text: " + copyText.value);
-// }
+window.onclick = function (event) {
+    invite_panel = document.getElementById("invite_panel");
+    if (event.target == invite_panel) {
+        invite_panel.style.display = "none";
+    }
+}
+
+function copyMeetId() {
+    /* Get the text field */
+    var copyText = document.getElementById("meeting-url");
+
+    /* Select the text field */
+    copyText.select();
+    copyText.setSelectionRange(0, 99999); /*For mobile devices*/
+
+    /* Copy the text inside the text field */
+    document.execCommand("copy");
+
+    /* Alert the copied text */
+    alert("Copied the text: " + copyText.value);
+}

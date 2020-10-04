@@ -1,118 +1,265 @@
-.main {
-    height: 100vh;
-    display: flex;
+body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Montserrat', sans-serif;
+    overflow-y: hidden;
 }
 
-#video-grid {
-    display: flex;
-    justify-content: center;
-    flex-wrap: wrap;
+.bottom-bar button {
+    margin: 12px;
+    border-radius: 50%;
+    width: 50px;
+    height: 50px;
+    font-size: 20px;
+    border: none;
+    color: #202124;
+    box-shadow: 0 4px 8px 0 black;
+    -webkit-transition-duration: 0.3s;
+}
+
+.bottom-bar button:hover {
+    border: 3px solid white;
+    background-color: #202124;
+    color: white;
+    box-shadow: 0 8px 16px 0 black;
+    transform: scale(1.1);
+}
+
+.bottom-bar .btn-sec {
+    background-color: #D33D2B;
+    box-shadow: 0 4px 8px 0 black;
+    color: white;
+    -webkit-transition-duration: 0.3s;
+}
+
+.bottom-bar .btn-sec:hover {
+    background-color: #ac3426;
+    box-shadow: 0 8px 16px 0 black;
+    transform: scale(1.1);
 }
 
 video {
     height: 300px;
     width: 400px;
-    object-fit: cover;
-    padding: 8px;
+    margin: 10px;
+    box-shadow: 0 10px 20px 0 rgba(0,0,0,0.2);
 }
 
-.main__left {
+.main-window {
+    background-color: #202124;
+    color: white;
     width: 100vw;
-    flex: 0.8;
-    display: flex;
-    flex-direction: column;
+    float: right;
+    transition: 0.5s;
 }
 
-.main__right {
-    flex: 0.2
+.videos-section {
+    background-color: #202124;
+    height: 90vh;
+    text-align: center;
 }
 
-.main__videos {
-    flex-grow: 1;
-    background-color: black;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    padding: 40px;
+.bottom-bar {
+    background-color: #262828;
+    color: #17252a;
+    height: 10vh;
+    text-align: center;
+    box-shadow: 0px -4px 5px  rgba(0,0,0,0.2);
 }
 
-.main__controls {
-    background-color: #1C1E20;
-}
 
-.main__right {
-    background-color: #242324;
-    border-left: 1px solid #3D3D42;
-}
-
-.main__controls {
-    color: #D2D2D2;
-    display: flex;
-    justify-content: space-between;
-    padding: 5px;
-}
-
-.main__controls__block {
-    display: flex;
-}
-
-.main__controls__button {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    padding: 8px 10px;
-    min-width: 80px;
-    cursor: pointer;
-}
-
-.main__controls__button:hover {
-    background-color: #343434;
-    border-radius: 5px;
-}
-
-.main__controls__button i {
-    font-size: 24px;
-}
-
-.main__right {
-    display: flex;
-    flex-direction: column;
+.sidepanel {
+    height: 100vh; /* Specify a height */
+    width: 0; /* 0 width - change this with JavaScript */
+    position: relative; 
+    z-index: 1; /* Stay on top */
+    top: 0;
+    left: 0;
+    background-color: #262828;
+    overflow-x: hidden;
+    overflow-y: hidden;
+    transition: 0.5s; /* 0.5 second transition effect to slide in the sidepanel */
+    box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
+    padding: 0px;
+    
 }
 
 .main__header {
-    padding-top: 5px;
+    padding-top: 20px;
+    padding-bottom: 15px;
+    background-color: #202124;
+    border-bottom: 2px solid gray;
     color: #F5F5F5;
     text-align: center;
 }
 
-.main__chat_window {
-    flex-grow: 1;
-    overflow-y: auto;
+.messages {
+    padding-left: 0px;
 }
 
-.messages{
+.main__chat_window {
+    max-height: 80vh;
+    overflow-y: scroll;
     color: white;
-    list-style: none;
+    padding-left: 0px;
+    width: 100%;
 }
+
+li {
+    list-style: none;
+    background-color: #202124;
+    padding: 5px;
+    margin: 10px;
+    margin-left: 20px;
+    position:relative;
+}
+
+li:before {
+    content: "";
+    width: 0px;
+    height: 0px;
+    position: absolute;
+    border-left: 10px solid transparent;
+    border-right: 10px solid#202124;
+    border-top: 10px solid #202124;
+    border-bottom: 10px solid transparent;
+    left: -19px;
+    top: 6px;
+}
+  
 
 .main__message_container {
+    position: absolute;
+    bottom: 0;
     padding: 22px 12px;
-    display: flex;
+    min-width: 25vw;
+    box-shadow: 0px -4px 5px  rgba(0,0,0,0.2);
+    /* position: fixed; */
+    /* background-color: #F5F5F5; */
+    height: 10vh;
+    /* width: 0vh; */
 }
 
-.main__message_container input {
-    flex-grow: 1;
-    background-color: transparent;
-    border: none;
+input {
     color: #F5F5F5;
+    width: 100%;
+    border: 0;
+    border-bottom: 2px solid gray;
+    outline: 0;
+    color: white;
+    padding: 7px 0;
+    background: #262828;
 }
 
-.leave_meeting {
-    color: #EB534B;
+/* .invite_panel_header {
+    padding: 2px 16px;
+    background-color: #5cb85c;
+    color: white;
+} */
+  
+  
+/* Modal Body */
+/* .invite_panel_body {
+    padding: 2px 16px;
+} */
+  
+
+/* Modal Footer */
+/* .invite_panel_footer{
+    padding: 2px 16px;
+    background-color: #5cb85c;
+    color: white;
+} */
+
+.invite_panel {
+    display: none; /* Hidden by default */
+    position: fixed; /* Stay in place */
+    z-index: 1; /* Sit on top */
+    left: 0;
+    top: 0;
+    width: 100%; /* Full width */
+    height: 100%; /* Full height */
+    overflow: auto; /* Enable scroll if needed */
+    background-color: rgb(0,0,0); /* Fallback color */
+    background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
 }
 
-.unmute, .stop {
-    color: #CC3B33;
+.invite_panel_content {
+    background-color: #202124;
+    color: white;
+    margin: 10% auto; /* 15% from the top and centered */
+    /* padding: 20px; */
+    /* border: 1px solid #888; */
+    width: 40%;
+    box-shadow: 0 8px 16px 0 black;
 }
 
+.close_invite_panel {
+    color: #aaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+}
+  
+.close_invite_panel:hover,
+.close_invite_panel:focus {
+    color: black;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+.invite_panel_header {
+    background-color: #262828;
+    padding: 20px;
+    border-bottom: 2px solid gray;
+}
+  
+.invite_panel_body {
+    padding: 20px;
+}
+
+.invite_panel_footer {
+    padding: 20px;
+    padding-top: 0px;
+    text-align: right;
+}
+
+.invite_panel button {
+    border: 3px solid white;
+    background-color: #202124;
+    color: white;
+    box-shadow: 0 4px 8px 0 black;
+    margin: 12px;
+    font-size: 17px;
+    padding: 5px 10px;
+    -webkit-transition-duration: 0.3s;
+}
+
+.invite_panel button:hover {
+    color: #202124;
+    background-color: white;
+    box-shadow: 0 2px 4px 0 black;
+    /* transform: scale(1.1); */
+}
+
+/* Add Animation */
+/* @keyframes animatetop {
+    from {top: -300px; opacity: 0}
+    to {top: 0; opacity: 1}
+} */
+
+
+
+/* .modal input {
+    margin-top: 20px;
+    padding: 10px;
+}
+
+.modal-content {
+    padding: 20px;
+    background-color: #202124;
+}
+
+.modal-footer {
+    border-top: none;
+} */
