@@ -51,12 +51,15 @@ video {
     width: 100vw;
     float: right;
     transition: 0.5s;
+    overflow-x: hidden;
+    overflow-y: hidden;
 }
 
 .videos-section {
     background-color: #202124;
     height: 90vh;
     text-align: center;
+    overflow-y: scroll;
 }
 
 .bottom-bar {
@@ -151,6 +154,25 @@ input {
     background: #262828;
 }
 
+/* .invite_panel_header {
+    padding: 2px 16px;
+    background-color: #5cb85c;
+    color: white;
+} */
+  
+  
+/* Modal Body */
+/* .invite_panel_body {
+    padding: 2px 16px;
+} */
+  
+
+/* Modal Footer */
+/* .invite_panel_footer{
+    padding: 2px 16px;
+    background-color: #5cb85c;
+    color: white;
+} */
 
 .invite_panel {
     display: none; /* Hidden by default */
@@ -222,3 +244,25 @@ input {
     box-shadow: 0 2px 4px 0 black;
     /* transform: scale(1.1); */
 }
+
+/* Add Animation */
+/* @keyframes animatetop {
+    from {top: -300px; opacity: 0}
+    to {top: 0; opacity: 1}
+} */
+
+
+
+/* .modal input {
+    margin-top: 20px;
+    padding: 10px;
+}
+
+.modal-content {
+    padding: 20px;
+    background-color: #202124;
+}
+
+.modal-footer {
+    border-top: none;
+} */
