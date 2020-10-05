@@ -72,9 +72,8 @@ function addVideoStream(video, stream) {
     video.addEventListener('loadedmetadata', () => {
         video.play()
     })
-    // videoGrid.append(<div class="col">)
+
     videoGrid.append(video)
-    // videoGrid.append(</div>)
 }
 
 
@@ -141,13 +140,11 @@ var isMessageOpen = false;
 function toggleNav() {
     if (isMessageOpen == false) {
         document.getElementById("mySidepanel").style.width = "25vw";
-        // document.getElementById("main__message_container").style.width = "25vw";
         document.getElementById("main-window").style.width = "75vw";
         isMessageOpen = true;
     }
     else {
         document.getElementById("mySidepanel").style.width = "0";
-        // document.getElementById("main__message_container").style.width = "0vw";
         document.getElementById("main-window").style.width = "100vw";
         isMessageOpen = false;
     }

@@ -15,10 +15,6 @@ app.use('/peerjs', peerServer);
 app.set('view engine', 'ejs')
 app.use(express.static('public'))
 
-// app.get('/', (req, res) => {
-//     res.redirect(`/${uuidV4()}`)
-// })
-
 app.get('/', (req, res) => {
     res.render('homepage');
 })
@@ -30,10 +26,6 @@ app.get('/start', (req, res) => {
 app.get('/join/:room', (req, res) => {
     res.render('index', { roomId: req.params.room })
 })
-
-// app.get('/:room', (req, res) => {
-//     res.render('index', { roomId: req.params.room })
-// })
 
 io.on('connection', socket => {
     socket.on('join-room', (roomId, userId) => {
